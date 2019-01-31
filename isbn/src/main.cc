@@ -1,11 +1,25 @@
 #include "Sales/Sales_item.h"
 
 int main (int argc, char** argv) {
-  Sales_item book1;
-  Sales_item book2;
   
-  std::cin >> book1 >> book2;
-  //std::cout << book1 << book2 << std::endl;
-  std::cout << book1.get_isbn() << std::endl;
+  Sales_item total;
+
+  if (std::cin >> total) {
+
+    Sales_item trans;
+    while ( std::cin >> trans){
+      if (total.get_isbn() == trans.get_isbn())
+	total = total + trans;
+      else {
+	std:: cout << total << std::endl;
+	total = trans;
+      }
+    }
+    std::cout << total << std::endl;    
+  } else {
+    std::cerr << "No data?" << std::endl;
+    return -1;
+  }
+  
   return 0;
 }

@@ -1,26 +1,5 @@
 #include "Sales_item.h"
 
-// Sales_item::Sales_item(std::string info) {
-//   isbn = "";
-
-//   for(auto it=info.begin(); *it != ' '; ++it){
-//     isbn.append(*it);
-//   }
-
-//   std::string tmp = "";
-//   for(it = it + 1; *it != ' '; ++it){
-//     tmp.append(*it);
-//   }
-//   number_sold = tmp.stoi();
-//   it++;
-
-//   tmp = "";
-//   for(it = it + 1; *it != info.end(); ++it){
-//     tmp.append(*it);
-//   }
-//   revenue = tmp.stod() * number_sold;
-// }
-
 std::istream &operator>>(std::istream &in, Sales_item &item) {
   std::string isbn;
   int number_sold;
@@ -48,4 +27,19 @@ std::ostream &operator<<(std::ostream &out, const Sales_item &item) {
   out << item.get_isbn() << " " << item.get_number_sold() << " "
       << item.get_revenue() << std::endl;
   return out;
+}
+
+Sales_item &Sales_item::operator+(const Sales_item &item2) {
+  number_sold += item2.get_number_sold();
+  revenue += item2.get_revenue();
+  return *this;
+}
+
+Sales_item &Sales_item::operator=(const Sales_item &item) {
+  if (this != &item) {
+    isbn = item.get_isbn();
+    number_sold = item.get_number_sold();
+    revenue = item.get_revenue();
+  }
+  return *this;
 }

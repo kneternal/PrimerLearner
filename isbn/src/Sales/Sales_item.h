@@ -9,7 +9,7 @@ private:
 public:
   Sales_item() {}
   // Sales_item(std::string info);
-  ~Sales_item() {} 
+  ~Sales_item() {}
   void set_isbn(std::string in) { isbn = in; }
   std::string get_isbn() const { return isbn; }
   void set_number_sold(int ns) { number_sold = ns; }
@@ -17,7 +17,7 @@ public:
   void set_revenue(double r) { revenue = r; }
   double get_revenue() const { return revenue; }
 
-  void operator+(Sales_item item2);
+  Sales_item &operator+(const Sales_item &item2);
   Sales_item &operator=(const Sales_item &item);
 };
 
