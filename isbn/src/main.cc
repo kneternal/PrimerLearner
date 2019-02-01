@@ -9,7 +9,7 @@ int main (int argc, char** argv) {
     Sales_item trans;
     while ( std::cin >> trans){
       if (total.get_isbn() == trans.get_isbn())
-	total = total + trans;
+	total += trans;
       else {
 	std:: cout << total << std::endl;
 	total = trans;

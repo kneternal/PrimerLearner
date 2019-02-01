@@ -19,6 +19,7 @@ public:
 
   Sales_item &operator+(const Sales_item &item2);
   Sales_item &operator=(const Sales_item &item);
+  Sales_item &operator+=(const Sales_item &item2);
 };
 
 std::ostream &operator<<(std::ostream &out, const Sales_item &item);

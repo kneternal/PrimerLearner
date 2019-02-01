@@ -43,3 +43,8 @@ Sales_item &Sales_item::operator=(const Sales_item &item) {
   }
   return *this;
 }
+
+Sales_item &Sales_item::operator+=(const Sales_item &item2) {
+  *this = *this + item2;
+  return *this;
+}
