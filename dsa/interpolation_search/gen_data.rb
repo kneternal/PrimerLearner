@@ -7,7 +7,7 @@ def gen_data size
   list = []
   File.open(file_name, 'w') do |f|
     size.times do |i|
-      list[i] = Random.rand(size * 100)
+      list[i] = Random.rand(size * 10)
     end
 
     list.sort!
@@ -20,8 +20,7 @@ end
 
 
 
-gen_data 100
-gen_data 1000
-gen_data 10000
-gen_data 100000
-gen_data 1000000
+8.times do |i|
+  puts "Generating size: #{10 ** i}"
+  gen_data 10 ** i
+end
