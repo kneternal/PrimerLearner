@@ -170,22 +170,23 @@ int main(){
   // cout << "Mergesort: Elapsed time : " << chrono::duration_cast<chrono::nanoseconds>(end - start).count() << endl;
 
   // //print(res);
-  //run();
+  int i =0;
+  run((void *)i);
   //run_one();
-  pthread_t a, b;
+  // pthread_t a, b;
 
-  int rc;
+  // int rc;
 
-  for (auto i = 0; i < 2; ++i) {
-    if(i == 0)
-      rc = pthread_create(&a, NULL, run, (void *)i);
-    else
-      rc = pthread_create(&a, NULL, run1, (void *)i);
-    if (rc) {
-      cout << "No" << endl;
-      exit(-1);
-    }
-  }
-  pthread_exit(NULL);
+  // for (auto i = 0; i < 2; ++i) {
+  //   if(i == 0)
+  //     rc = pthread_create(&a, NULL, run, (void *)i);
+  //   else
+  //     rc = pthread_create(&a, NULL, run1, (void *)i);
+  //   if (rc) {
+  //     cout << "No" << endl;
+  //     exit(-1);
+  //   }
+  // }
+  // pthread_exit(NULL);
   return 0;
 }
