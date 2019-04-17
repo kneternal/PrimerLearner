@@ -23,7 +23,7 @@ void *run(void *threadid) {
 
 void run_once_quick_sort() {
   vector<int> data;
-  string file_name = "data_10.txt";
+  string file_name = "data_100.txt";
   read_data(data, file_name);
 
   print(data);
@@ -42,8 +42,9 @@ void run_once_quick_sort() {
 int main() {
   // int i = 0;
   // run((void *)i);
-  srand(time(NULL));
-
+  unsigned seed = time(NULL);
+  srand(seed);
+  cout << "seed: " << seed << endl;;
   run_once_quick_sort();
   return 0;
 }

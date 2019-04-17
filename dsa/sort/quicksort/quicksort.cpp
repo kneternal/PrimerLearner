@@ -9,28 +9,30 @@ void quicksort_helper(vector<int> &data, int head, int tail){
     return;
   }
   int partition = partition_helper(data, head, tail);
-  cout << "partition: " << partition << endl;
+  // cout << "partition: " << partition << endl;
   quicksort_helper(data, head, partition);
   quicksort_helper(data, partition + 1, tail);
 }
 
 int partition_helper(vector<int> &data, int head, int tail){
   int size = tail - head + 1;
-  cout << "size: " << size << endl;
-  cout << "head: " << head << endl;
-  cout << "tail: " << tail << endl;
-  int pivot = rand() %  size + head;
-  cout << "pivot: " << pivot << endl;
-  int i = head, j = tail;
+  int pivot = data[rand() %  size + head];
+  int i = head - 1, j = tail + 1;
+  
+  // cout << "size: " << size << endl;
+  // cout << "head: " << head << endl;
+  // cout << "tail: " << tail << endl;
+  // cout << "pivot: " << pivot << endl;
+  // cout << "pivot value: " << data[pivot] << endl;
   
   while(true){
-    while(data[i] < data[pivot]){
+    do{
       i++;
-    }
+    }while(data[i] < pivot);
 
-    while(data[j] > data[pivot]){
+    do{
       j--;
-    }
+    }while(data[j] > pivot);
 
     if(i >= j)
       return j;
@@ -39,4 +41,5 @@ int partition_helper(vector<int> &data, int head, int tail){
     data[i] = data[j];
     data[j] = tmp;
   }
+  // cout << "quit partition_helper" << endl;
 }
