@@ -23,16 +23,16 @@ void *run(void *threadid) {
 
 void run_once_quick_sort() {
   vector<int> data;
-  string file_name = "data_100.txt";
+  string file_name = "data_1000000.txt";
   read_data(data, file_name);
 
-  print(data);
+  //print(data);
   
   auto start = chrono::steady_clock::now();
   quicksort(data);
   auto end = chrono::steady_clock::now();
 
-  print(data);
+  //print(data);
   
   cout << "Quicksort: Elapsed time : "
        << chrono::duration_cast<chrono::nanoseconds>(end - start).count()
