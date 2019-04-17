@@ -5,6 +5,7 @@ cc_binary(
       "headers.h"
       ],
   deps = [
+      "//insertionsort:insertionsort",
       "//shellsort:shellsort",
       "//quicksort:quicksort",
       "//mergesort:mergesort",

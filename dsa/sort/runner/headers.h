@@ -5,8 +5,11 @@
 #include <cmath>
 #include <string>
 #include <assert.h>
+#include <ctime>
 
 #include "mergesort/mergesort.h"
+#include "insertionsort/insertionsort.h"
+#include "quicksort/quicksort.h"
 
 using namespace std;
 
